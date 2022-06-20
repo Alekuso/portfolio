@@ -7,14 +7,16 @@ $terminal-color: #00ff41;
 	color: white;
 }
 
-:global(body) {
+:global(.preload) {
 	transition: none !important;
 }
 
 :global(.light) {
 	background-color: $base-color-light;
+	transition: 0.5s background-color ease-in-out;
 }
 
 :global(.dark) {
 	background-color: $base-color-dark;
+	transition: 0.5s background-color ease-in-out;
 }

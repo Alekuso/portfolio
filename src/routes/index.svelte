@@ -12,6 +12,13 @@
 				command(input);
 			}
 		});
+
+		setTimeout(() => {
+			const preloadElements = document.getElementsByClassName('preload');
+			for (let element of preloadElements) {
+				element.classList.remove('preload');
+			}
+		}, 10);
 	});
 
 	function command(data) {
@@ -44,8 +51,8 @@
 
 <div class="wrapper">
 	<ThemeButton />
-	<h1 class="title">I'm<br />Alex Olemans.</h1>
-	<p class="subtitle">
+	<h1 class="title preload">I'm<br />Alex Olemans.</h1>
+	<p class="subtitle preload">
 		Also known as "Alexou" on the internet, I'm a student and a fullstack developer.
 	</p>
 	<hr />
@@ -109,9 +116,10 @@
 				margin-left: 2.5rem;
 				margin-top: 1rem;
 				max-width: 40rem;
+				mix-blend-mode: difference;
 			}
-
 			:global(.error) {
+				mix-blend-mode: normal !important;
 				color: red;
 				font-weight: bold;
 			}
