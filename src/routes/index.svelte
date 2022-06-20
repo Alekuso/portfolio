@@ -2,8 +2,8 @@
 	import { onMount } from 'svelte';
 
 	let input = '';
-
 	let output = '';
+
 	onMount(() => {
 		let cmd = document.getElementById('cmd');
 		cmd.addEventListener('keydown', (e) => {
