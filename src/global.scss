@@ -4,14 +4,17 @@ $terminal-color: #00ff41;
 
 :root {
 	font-family: 'Inter', sans-serif;
+	color: white;
 }
 
 :global(body) {
-	color: white;
-	background-color: $base-color-dark;
-	transition: background-color 0.5s ease-in-out;
+	transition: none !important;
 }
 
 :global(.light) {
 	background-color: $base-color-light;
+}
+
+:global(.dark) {
+	background-color: $base-color-dark;
 }
