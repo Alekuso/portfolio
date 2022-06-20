@@ -22,6 +22,7 @@
 	});
 
 	function command(data) {
+		document.getElementById('msg').classList.remove('normal');
 		document.getElementById('msg').classList.remove('error');
 		input = '';
 		switch (data) {
@@ -41,6 +42,8 @@
 		output = x;
 		if (y) {
 			document.getElementById('msg').classList.add('error');
+		} else {
+			document.getElementById('msg').classList.add('normal');
 		}
 	}
 </script>
@@ -116,10 +119,12 @@
 				margin-left: 2.5rem;
 				margin-top: 1rem;
 				max-width: 40rem;
+			}
+
+			:global(.normal) {
 				mix-blend-mode: difference;
 			}
 			:global(.error) {
-				mix-blend-mode: normal !important;
 				color: red;
 				font-weight: bold;
 			}
