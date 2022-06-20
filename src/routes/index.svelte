@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import ThemeButton from '../components/ThemeButton.svelte';
 
 	let input = '';
 	let output = '';
@@ -42,6 +43,7 @@
 </svelte:head>
 
 <div class="wrapper">
+	<ThemeButton />
 	<h1 class="title">I'm<br />Alex Olemans.</h1>
 	<p class="subtitle">
 		Also known as "Alexou" on the internet, I'm a student and a fullstack developer.
@@ -52,7 +54,7 @@
 			<span>$></span><input id="cmd" type="text" placeholder="help" bind:value={input} />
 		</label>
 		<div class="output">
-			<span id="msg" class="msg error">{output}</span>
+			<span id="msg" class="msg">{output}</span>
 		</div>
 	</div>
 </div>
@@ -90,7 +92,7 @@
 					background: transparent;
 					margin-left: 0.5rem;
 					border: none;
-					color: lightgray;
+					color: gray;
 					font-weight: bold;
 				}
 
@@ -99,7 +101,7 @@
 				}
 
 				input::placeholder {
-					color: gray;
+					color: darkgray;
 				}
 			}
 
@@ -109,7 +111,7 @@
 				max-width: 40rem;
 			}
 
-			.error {
+			:global(.error) {
 				color: red;
 				font-weight: bold;
 			}
